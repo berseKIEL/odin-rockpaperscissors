@@ -1,0 +1,75 @@
+Copy code
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Rock Paper Scissors</title>
+  <style>
+    /* Add some style to the buttons */
+    button {
+      background-color: #4CAF50;
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Create a container for the game -->
+  <div id="game">
+    <!-- Display a prompt for the player to choose their move -->
+    <p>Choose your move:</p>
+    <!-- Create buttons for each move -->
+    <button id="rock">Rock</button>
+    <button id="paper">Paper</button>
+    <button id="scissors">Scissors</button>
+  </div>
+  <script>
+    // Get references to the buttons
+    const rockButton = document.getElementById('rock');
+    const paperButton = document.getElementById('paper');
+    const scissorsButton = document.getElementById('scissors');
+
+    // Create a function to handle the player's move
+    function play(playerMove) {
+      // Generate a random move for the computer
+      const computerMove = Math.random();
+      if (computerMove < 0.34) {
+        computerMove = 'rock';
+      } else if(computerMove <= 0.67) {
+        computerMove = 'paper';
+      } else {
+        computerMove = 'scissors';
+      }
+
+      // Compare the player's move to the computer's move to determine the winner
+      if (playerMove === computerMove) {
+        // It's a tie!
+        alert('It\'s a tie!');
+      } else if (playerMove === 'rock' && computerMove === 'scissors') {
+        // Rock beats scissors, player wins
+        alert('You win! Rock beats scissors');
+      } else if (playerMove === 'paper' && computerMove === 'rock') {
+        // Paper beats rock, player wins
+        alert('You win! Paper beats rock');
+      } else if (playerMove === 'scissors' && computerMove === 'paper') {
+        // Scissors beats paper, player wins
+        alert('You win! Scissors beats paper');
+      } else {
+        // If none of the above conditions are met, the computer wins
+        alert('You lose! ' + computerMove + ' beats ' + playerMove);
+      }
+    }
+
+    // Add event listeners to the buttons to trigger the play function
+    rockButton.addEventListener('click', () => play('rock'));
+    paperButton.addEventListener('click', () => play('paper'));
+    scissorsButton.addEventListener('click', () => play('scissors'));
+  </script>
+</body>
+</html>

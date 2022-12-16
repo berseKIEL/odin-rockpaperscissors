@@ -1,0 +1,114 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100vh;
+  width: 100vw;
+  background-color: #2b2b2b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Source Code Pro", monospace;
+}
+
+img,
+picture,
+svg,
+video {
+  display: block;
+  max-width: 100%;
+}
+
+input,
+textarea,
+button,
+select {
+  font: inherit;
+}
+
+.game-title {
+  position: absolute;
+  top: 20px;
+  z-index: 20;
+  -webkit-text-stroke: 2px #ff9900!important;
+}
+
+.strange-font {
+  font-size: 48px;
+  font-weight: bold;
+  -webkit-text-stroke: 2px #414141;
+  background: -webkit-linear-gradient(#ff9900, #fff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  letter-spacing: -3px;
+}
+
+#game {
+  height: 75%;
+  width: 95%;
+  background-color: #ff9900;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  padding: 0 20px 20px;
+}
+
+.player-side {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.player-title {
+  position: absolute;
+  font-size: 50px;
+  top: 20px;
+}
+
+.player-container {
+  width: 100%;
+  height: 88%;
+  background-color: #d1d1d1;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.computer-side {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.computer-title {
+  position: absolute;
+  font-size: 50px;
+  top: 20px;
+}
+
+.computer-container {
+  width: 100%;
+  height: 88%;
+  background-color: #414141;
+  border: 1px solid white;
+  border-radius: 20px;
+}
+
+.separator {
+  margin: 0 20px;
+}

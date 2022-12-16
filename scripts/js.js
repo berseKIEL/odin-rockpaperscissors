@@ -48,5 +48,3 @@ var getPlayerChoice = () => {
         alert("Empty or invalid response")
     }
 }
-
-game()

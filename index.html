@@ -12,7 +12,14 @@
     <div id="game">
       <div class="player-side">
         <h1 class="player-title strange-font">Player 1</h1>
-        <div class="player-container"></div>
+        <div class="player-container">
+          <img src="https://play-lh.googleusercontent.com/hNdtGm94kTWZde8Dd14L4jj9iI7vwsiqk5n9dELqWJQAGTs6mTnSPMt-r9jEVPY6u5zh" alt="player 1">
+          <div id="player-buttons">
+            <button id="rock">Rock</button>
+            <button id="paper">Paper</button>
+            <button id="scissors">Scissors</button>
+          </div>
+        </div>
       </div>
 
       <div class="separator">
@@ -21,10 +28,27 @@
 
       <div class="computer-side">
         <h1 class="computer-title strange-font">Computer</h1>
-        <div class="computer-container"></div>
+        <div class="computer-container">
+          <img src="https://steamuserimages-a.akamaihd.net/ugc/794241544487701671/86455A5712DDC3C531EF64CD530379E8C8716EFB/" alt="computer hacker" id="YOULOSEEEE">
+          <div id="computer-buttons">
+            <button disabled id="rock-c">Rock</button>
+            <button disabled id="paper-c">Paper</button>
+            <button disabled id="scissors-c">Scissors</button>
+          </div>
+        </div>
       </div>
     </div>
 
+    <div id="modal">
+      <div class="modal-body">
+        <h1 class="strange-font modal-h1 noselect" id="modal-title">
+        </h1>
+        <button id="play-again">
+          Play again
+        </button>
+      </div>
+    </div>
+    
     <script src="scripts/js.js"></script>
   </body>
 </html>

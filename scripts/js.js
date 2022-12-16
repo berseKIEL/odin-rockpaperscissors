@@ -1,3 +1,8 @@
+var getComputerChoice = () => {
+    var resultado = Math.floor(Math.random() * 3 + 1);
+    return resultado == 1 ? 'rock' : resultado == 2 ? 'paper' : 'scissors'
+}
+
 function playRound(playerSelection, computerSelection) {
     console.log(`Player selected: ${playerSelection.charAt(0).toUpperCase() + playerSelection.slice(1)}`)
     console.log(`Computer selected: ${computerSelection.charAt(0).toUpperCase() + computerSelection.slice(1)}`)
@@ -23,28 +28,48 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-function game() {
-    let playerWins = 0;
-    let computerWins = 0;
-    for (var i = 0; i < 5; i++) {
-        win = playRound(getPlayerChoice(), getComputerChoice());
-        win == 1 ? playerWins++ : win == 2 ? computerWins++ : 0;
-        console.log(playerWins, computerWins)
+function game(playerSelection) {
+
+    round = playRound(playerSelection, getComputerChoice());
+    if (round == 1) {
+        updateModal('Win');
+    }
+    else if (round == 2) {
+        updateModal('Lose');
+        youLose();
+    }
+    else {
+        updateModal('Tie');
     }
 }
 
-var getComputerChoice = () => {
-    var resultado = Math.floor(Math.random() * 3 + 1);
-    return resultado == 1 ? 'rock' : resultado == 2 ? 'paper' : 'scissors'
+
+const parentNode = document.getElementById('player-buttons');
+
+for (let i = 0; i < parentNode.children.length; i++) {
+    const childNode = parentNode.children[i];
+    childNode.addEventListener('click', () => {
+        game(childNode.id)
+    })
 }
 
-var getPlayerChoice = () => {
-    let input;
-    while (true) {
-        input = prompt("Choose 'rock', 'paper' or 'scissors'").toLowerCase();
-        if (input !== '' && (input == 'rock' || input == 'paper' || input == 'scissors')) {
-            return input
-        }
-        alert("Empty or invalid response")
-    }
+function updateModal(conditon) {
+    const modal = document.getElementById('modal');
+    modal.style.display = 'flex';
+    const modalTitle = document.getElementById('modal-title')
+    modalTitle.textContent = `You ${conditon}`;
 }
+
+function youLose() {
+    const lose = document.getElementById('YOULOSEEEE')
+    lose.classList.add('scaling-element')
+}
+
+const playAgain = document.getElementById('play-again');
+
+playAgain.addEventListener(('click'), () => {
+    const lose = document.getElementById('YOULOSEEEE');
+    lose.classList.remove('scaling-element');
+    const modal = document.getElementById('modal');
+    modal.style.display = 'none';
+})

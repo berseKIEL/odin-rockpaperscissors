@@ -92,7 +92,7 @@ select {
 }
 
 .player-container img {
-  width: 150px;
+  width: 300px;
   object-fit: cover;
   border-radius: 50%;
 }
@@ -127,9 +127,9 @@ select {
 }
 
 .computer-container img {
+  width: 300px;
   object-fit: cover;
   border-radius: 50%;
-  width: 150px;
 }
 
 button {
@@ -273,6 +273,13 @@ button:disabled {
   }
   .computer-title {
     top: 0px;
+  }
+
+  .player-container img {
+    width: 150px;
+  }
+  .computer-container img {
+    width: 150px;
   }
 
   #modal-body {

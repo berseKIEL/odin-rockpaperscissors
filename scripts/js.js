@@ -96,6 +96,7 @@ function updateModalOnCondition(condition) {
     modalBody.style.display = 'flex';
 
     const modalTitle = document.getElementById('modal-title')
+    modalTitle.classList.add(condition.charAt(0).toLowerCase() + condition.slice(1))
     modalTitle.textContent = `You ${condition}`;
 }
 

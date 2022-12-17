@@ -189,14 +189,31 @@ button:disabled {
   border-radius: 20px;
 }
 
-.modal-body h1 {
+#modal-body h1 {
   font-size: 78px;
   font-weight: bold;
+  letter-spacing: -3px;
+}
+
+#modal-body .lose {
+  background: -webkit-linear-gradient(#ff2828, rgb(239, 255, 251));
   -webkit-text-stroke: 2px #414141;
-  background: -webkit-linear-gradient(#34fc9c, rgb(239, 255, 251));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  letter-spacing: -3px;
+}
+
+#modal-body .win {
+  background: -webkit-linear-gradient(#22ff94, rgb(239, 255, 251));
+  -webkit-text-stroke: 2px #414141;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#modal-body .tie {
+  background: -webkit-linear-gradient(#eb0aff, rgb(239, 255, 251));
+  -webkit-text-stroke: 2px #414141;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .noselect {
@@ -213,13 +230,13 @@ button:disabled {
     transform: scale(1);
   }
   to {
-    transform: scale(10);
+    transform: scale(3);
   }
 }
 
 .scaling-element {
   animation-name: scaleUp;
-  animation-duration: 3s;
+  animation-duration: 1s;
+  animation-fill-mode: forwards;
   animation-timing-function: ease-in-out;
-  animation-iteration-count: infinite;
 }

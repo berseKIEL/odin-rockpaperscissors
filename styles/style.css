@@ -149,6 +149,18 @@ button {
   cursor: pointer;
 }
 
+.highlight {
+  background-color: green !important;
+}
+
+button:hover {
+  background-color: #ff9900;
+}
+
+.selected {
+  background-color: green !important;
+}
+
 button:disabled {
   background-color: gray;
   cursor: default;
@@ -165,9 +177,9 @@ button:disabled {
   z-index: 3;
 }
 
-.modal-body {
+#modal-body {
   background-color: orange;
-  display: flex;
+  display: none;
   flex-direction: column;
   align-items: center;
   justify-content: center;
